@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SimpleBall.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
+
+[node name="Ball" type="RigidBody2D"]
+script = ExtResource( 1 )
+radius = 20
+color = Color( 0.45098, 0.87451, 0.0235294, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 10, 10 )
+rect = Rect2( -20, -20, 20, 20 )

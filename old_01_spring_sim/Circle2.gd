@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends StaticBody2D
 
 
 # Declare member variables here. Examples:
@@ -9,12 +9,13 @@ onready var color = Color(255, 0, 0)
 func _ready():
 	pass # Replace with function body.
 
-onready var gravity = 9.8/4
+onready var gravity = 1
 onready var velocity = Vector2.ZERO
 
-func _physics_process(delta):
-	velocity.y += gravity
-	velocity = move_and_slide(velocity, Vector2.UP)
+#func _physics_process(delta):
+#	pass
+	#velocity.y += gravity 
+	#velocity = move_and_slide(velocity, Vector2.UP)
 	
 func _draw():
 	var circle: CircleShape2D = $CollisionShape2D.shape
