@@ -1,3 +1,4 @@
+tool
 extends RigidBody2D
 
 onready var mouse_inside = false

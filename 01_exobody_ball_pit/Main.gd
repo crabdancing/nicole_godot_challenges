@@ -12,6 +12,6 @@ func _input(ev):
 		if not $Platform.mouse_inside:
 			var new_ball = SimpleBall.instance()
 			new_ball.position = ev.position - get_global_transform_with_canvas().origin
-			new_ball.color = Color(randi())
-			new_ball.radius = randi() % 50 + 10
+			new_ball.set_color(Color(randi()))
+			new_ball.set_radius(randi() % 50 + 10)
 			add_child(new_ball)
