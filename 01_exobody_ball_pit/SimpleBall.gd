@@ -19,3 +19,8 @@ func _draw():
 func _process(delta):
 	if old_radius != radius or old_color != color:
 		update()
+
+# We are no longer in sight
+func _on_VisibilityNotifier2D_viewport_exited(viewport):
+	# Instantly kill self Y~Y
+	queue_free()

@@ -10,4 +10,6 @@ config_version=4
 
 [application]
 
+config/name="Exobody Ball Pit"
+config/description="Technical exercise in 2D physics & logic in the Godot game engine."
 run/main_scene="res://Main.tscn"
