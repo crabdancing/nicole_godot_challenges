@@ -9,22 +9,29 @@ var diameter = radius * 2
 
 func set_radius(new_radius):
 	radius = new_radius
-	diameter = radius * 2
-	$VisibilityNotifier2D.rect = Rect2(-diameter * 2, -diameter * 2, diameter * 2, diameter * 2)
-	$VisibilityNotifier2D.position = position - Vector2(-diameter, -diameter)
-	$CollisionShape2D.shape.radius = radius
+	recalculate_radius()
 	update()
-
+	
+	
 func set_color(new_color):
 	color = new_color
 	update()
 	
-func _ready():
+func recalculate_radius():
 	diameter = radius * 2
-	$VisibilityNotifier2D.rect = Rect2(-diameter * 2, -diameter * 2, diameter * 2, diameter * 2)
-	$VisibilityNotifier2D.position = position - Vector2(-diameter, -diameter)
-	$CollisionShape2D.shape = CircleShape2D.new()
+	var scale_visibility_notifier = 4
+	$VisibilityNotifier2D.rect = Rect2(-diameter * scale_visibility_notifier,
+		-diameter * scale_visibility_notifier,
+		diameter * scale_visibility_notifier,
+		diameter * scale_visibility_notifier)
+	$VisibilityNotifier2D.position = position - Vector2(
+		-radius * scale_visibility_notifier,
+		-radius * scale_visibility_notifier)
 	$CollisionShape2D.shape.radius = radius
+	
+func _ready():
+	$CollisionShape2D.shape = CircleShape2D.new()
+	recalculate_radius()
 	update()
 	
 func _draw():
