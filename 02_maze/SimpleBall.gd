@@ -26,15 +26,12 @@ func recalculate_radius():
 		-diameter * scale_visibility_notifier,
 		diameter * scale_visibility_notifier,
 		diameter * scale_visibility_notifier)
-	$VisibilityNotifier2D.position = position - Vector2(
+	$VisibilityNotifier2D.position = position - transform.get_origin() - Vector2(
 		-radius * scale_visibility_notifier,
 		-radius * scale_visibility_notifier)
 	$CollisionShape2D.shape.radius = radius
 	
 func _ready():
-	# Prevent null warnings when in editor
-	if position == null:
-		position = Vector2(0, 0)
 	screen_size = get_viewport_rect().size
 	$CollisionShape2D.shape = CircleShape2D.new()
 	recalculate_radius()
@@ -59,6 +56,6 @@ func _process(delta):
 		velocity = velocity.normalized() * speed
 		
 	velocity =  move_and_slide(velocity, Vector2.DOWN)
-	
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	if position != null:
+		position.x = clamp(position.x, 0, screen_size.x)
+		position.y = clamp(position.y, 0, screen_size.y)

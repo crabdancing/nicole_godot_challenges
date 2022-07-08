@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="Ball" type="KinematicBody2D"]
-position = Vector2( 60, 0 )
+position = Vector2( -70, 60 )
 script = ExtResource( 1 )
 speed = 500
 

@@ -32,5 +32,5 @@ rotation = 7.78829e-07
 rect = Rect2( 0, 0, 100, 10 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 45.4108, 573.384 )
+position = Vector2( 39.076, 579.924 )
 color = Color( 0.611765, 0.152941, 0.843137, 1 )
