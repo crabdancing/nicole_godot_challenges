@@ -10,7 +10,7 @@ position = Vector2( 514, 303 )
 script = ExtResource( 3 )
 
 [node name="Platform" parent="." instance=ExtResource( 1 )]
-position = Vector2( -517, 293 )
+position = Vector2( -517, 301 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
