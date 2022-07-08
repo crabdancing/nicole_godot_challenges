@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://RigidBody2.gd" type="Script" id=1]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://Platform.gd" type="Script" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.184314, 0.552941, 0.152941, 1 )
@@ -14,10 +14,7 @@ size = Vector3( 100, 0.2, 100 )
 [sub_resource type="Skin" id=7]
 
 [node name="Main" type="Spatial"]
-script = ExtResource( 3 )
-
-[node name="Ball" parent="." instance=ExtResource( 2 )]
-radius = 0.6
+script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20.8038 )
@@ -35,3 +32,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71008, -0.102969 )
 mesh = SubResource( 6 )
 skin = SubResource( 7 )
 material/0 = null
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+
+[connection signal="input_event" from="Platform" to="." method="_on_Platform_input_event"]
+[connection signal="mouse_entered" from="Platform" to="." method="_on_Platform_mouse_entered"]

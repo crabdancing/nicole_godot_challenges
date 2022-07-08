@@ -10,7 +10,7 @@ export var radius: float = 1 setget set_radius
 export var color: Color = Color(100, 100, 100) setget set_color
 var am_ready = false
 var diameter = radius * 2
-
+onready var main = 	get_node("/root/Main")
 func set_radius(new_radius):
 	radius = new_radius
 	update_radius()
@@ -62,3 +62,8 @@ func _on_VisibilityNotifier_camera_exited(_camera):
 	# If you have multiple, make sure you figure out some logic for the conditional!
 	# print(self, ' I die now >.<')
 	queue_free()
+
+
+func _on_Ball_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		main.spawn_ball(position)

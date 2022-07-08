@@ -10,4 +10,4 @@ config_version=4
 
 [application]
 
-run/main_scene="res://Spatial.tscn"
+run/main_scene="res://Main.tscn"

@@ -25,4 +25,5 @@ shape = SubResource( 3 )
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 aabb = AABB( -4, -4, -4, 8, 8, 8 )
 
+[connection signal="input_event" from="." to="." method="_on_Ball_input_event"]
 [connection signal="camera_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_camera_exited"]
