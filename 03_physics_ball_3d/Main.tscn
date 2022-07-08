@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Platform.gd" type="Script" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -12,6 +12,8 @@ material = SubResource( 5 )
 size = Vector3( 100, 0.2, 100 )
 
 [sub_resource type="Skin" id=7]
+
+[sub_resource type="BoxShape" id=8]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 2 )
@@ -29,9 +31,13 @@ script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Platform"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.71008, -0.102969 )
+visible = false
 mesh = SubResource( 6 )
 skin = SubResource( 7 )
 material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Platform"]
+shape = SubResource( 8 )
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 
