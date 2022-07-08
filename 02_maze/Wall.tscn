@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://RigidBody2D.gd" type="Script" id=1]
+
+[node name="Wall" type="RigidBody2D"]
+mode = 1
+script = ExtResource( 1 )
+rect = Rect2( 0, 0, 100, 5 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 100, 0, 100, 5, 0, 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, 0, 100, 0, 100, 5, 0, 5 )
