@@ -2,6 +2,8 @@ extends Spatial
 
 var Ball = load("res://Ball.tscn")
 
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -9,13 +11,14 @@ var Ball = load("res://Ball.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-
-#func _input(ev):
-#	if ev is InputEventMouseButton and ev.pressed:
-
-
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if event is InputEventMouseButton and Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
 func spawn_ball(position: Vector3):
 	var new_ball = Ball.instance()
 	new_ball.translate(position)
