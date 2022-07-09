@@ -61,7 +61,8 @@ func _on_VisibilityNotifier_camera_exited(_camera):
 	# NOTE: this will trigger if any camera is exited
 	# If you have multiple, make sure you figure out some logic for the conditional!
 	# print(self, ' I die now >.<')
-	queue_free()
+	if not Engine.editor_hint:
+		queue_free()
 
 
 func _on_Ball_input_event(camera, event, position, normal, shape_idx):
