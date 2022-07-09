@@ -1,12 +1,14 @@
+tool
 extends RigidBody
 
 
 
+export var extents: Vector3 = Vector3(10, 10, 10)
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var mesh: CubeMesh = $MeshInstance.mesh
-	var aabb: AABB = mesh.get_aabb()
-	print($CollisionObject.shape_owner_get_shape())
+	$MeshInstance.mesh.set_size(extents)
+	$CollisionShape.shape.set_extents(extents/2)
 	input_ray_pickable = true
 	# TODO: this convex collision doesn't seem to trigger mouse raytracing from camera
 	# - we know the spheres work, and they are using a more conventional collision shape object

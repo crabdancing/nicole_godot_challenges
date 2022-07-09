@@ -26,3 +26,7 @@ func spawn_ball(position: Vector3):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+func _on_Platform_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		spawn_ball(position)
