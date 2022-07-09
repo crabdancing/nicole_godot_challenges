@@ -36,13 +36,17 @@ func _physics_process(delta):
 		if is_on_floor() and Input.is_action_pressed("jump"):
 			velocity.y = JUMP_SPEED
 		velocity = move_and_slide(velocity, Vector3.UP, true)
+		#var cam_direction = camera.global_transform.basis.get_euler()
+		#print(cam_direction)
 		if Input.is_action_pressed("shoot"):
+			# -z is forward, btw
 			var new_ball = Ball.instance()
-			new_ball.translate(transform.origin)
+			new_ball.translate($SpawnPos.global_transform.origin)
+			#new_ball.add_central_force(cam_direction + Vector3.FORWARD)
 			new_ball.set_color(Color(randi()))
 			new_ball.set_radius(randf() * 5)
 			get_parent().add_child(new_ball)
-		
+			#add_child(new_ball)
 
 
 func _unhandled_input(event):

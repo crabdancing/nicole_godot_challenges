@@ -7,12 +7,12 @@ albedo_color = Color( 0.184314, 0.552941, 0.152941, 1 )
 
 [sub_resource type="CubeMesh" id=6]
 material = SubResource( 5 )
-size = Vector3( 100, 1, 100 )
+size = Vector3( 1000, 1, 1000 )
 
 [sub_resource type="Skin" id=7]
 
 [sub_resource type="BoxShape" id=8]
-extents = Vector3( 50, 0.5, 50 )
+extents = Vector3( 500, 0.5, 500 )
 
 [node name="Platform" type="RigidBody"]
 mode = 1
