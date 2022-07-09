@@ -10,6 +10,11 @@
 **/data_*/
 
 **/logs/
-**/.pck
-**/.x86_64
-**/.exe
+**/*.pck
+**/*.x86_64
+**/*.exe
+**/build
+**/*.log
+01_exobody_ball_pit/build/Exobody
+Ball
+Pit.x86_64
