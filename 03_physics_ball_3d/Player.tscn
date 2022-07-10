@@ -25,4 +25,4 @@ shape = SubResource( 2 )
 current = true
 
 [node name="SpawnPos" type="Position3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17009, -13.1725 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.54153, -15.5654 )
